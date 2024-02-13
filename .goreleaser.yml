@@ -1,0 +1,27 @@
+builds:
+  -
+    binary: entrywan
+    goos:
+      - linux
+      - darwin
+      - netbsd
+      - freebsd
+      - openbsd
+      - solaris
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: netbsd
+        goarch: arm64
+      - goos: freebsd
+        goarch: arm64
+      - goos: openbsd
+        goarch: arm64
+      - goos: solaris
+        goarch: arm64
+      - goos: windows
+        goarch: arm64
+    env:
+      - CGO_ENABLED=0
