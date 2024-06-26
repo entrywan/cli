@@ -17,12 +17,19 @@ using an [IAM token](https://entrywan.com/docs#iam).
 
 ### Examples
 
-List clusters:
+List clusters and fetch kubeconfig for a cluster:
 
 ```
 $ entrywan cluster ls
 ID					NAME	STATE		SIZE	LOCATION	VERSION
 7cdc1e38-23f4-450e-b4ce-40d8f3b5456f	foo	running		4	us1		1.29
+
+$ entrywan cluster kubeconfig 7cdc1e38-23f4-450e-b4ce-40d8f3b5456f
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJ
+[...]
 ```
 
 Create an app and fetch its logs:
