@@ -1,4 +1,4 @@
-Entrywan's command line interface.
+Entrywan's command line interface.  Read the short [blog post](https://www.entrywan.com/blog/2024-06-26-cli-released).
 
 ### Install
 
