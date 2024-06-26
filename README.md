@@ -17,7 +17,7 @@ using an [IAM token](https://entrywan.com/docs#iam).
 
 ### Examples
 
-List instances:
+List clusters:
 
 ```
 $ entrywan cluster ls
