@@ -23,7 +23,6 @@ type Firewall struct {
 func listFirewalls() {
 	var firewalls []Firewall
 	_, b := get("/firewall")
-	fmt.Println(string(b))
 	json.Unmarshal(b, &firewalls)
 	w := new(tabwriter.Writer)
 	w.Init(os.Stdout, minwidth, tabwidth, padding, '\t', 0)
