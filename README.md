@@ -3,7 +3,10 @@ Entrywan's command line interface.  Read the short [blog post](https://www.entry
 ### Install
 
 Download [official binaries](https://github.com/entrywan/cli/releases/latest) for Linux,
-macOS, NetBSD, FreeBSD, OpenBSD, Windows and Solaris.
+macOS, NetBSD, FreeBSD, OpenBSD, Windows and Solaris.  Alternatively,
+if you have a working [go](https://go.dev/) installation, you can
+clone this repository and run `go install .` from the root of the
+tree.
 
 ### Configure
 
