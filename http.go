@@ -6,12 +6,14 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"runtime"
 )
 
 func setHeaders(req *http.Request) {
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "Bearer "+config.Token)
+	req.Header.Set("User-Agent", "cli "+runtime.GOOS+"/"+runtime.GOARCH+" version "+version)
 }
 
 func do(method, path string, body []byte) (int, []byte) {
