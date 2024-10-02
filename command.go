@@ -112,8 +112,12 @@ The subcommands are:
     list (or ls)        List vpcs
     create <arguments>  Create a new vpc
     delete <vpc_id>     Delete a vpc
+    add <arguments>     Add instance to vpc
+    remove <arguments>  Remove instance from vpc
 
-'entrywan vpc create' for create arguments`)
+'entrywan vpc create' for create arguments)
+'entrywan vpc add' for add arguments)
+'entrywan vpc remove' for remove arguments`)
 }
 
 func runCommand() {

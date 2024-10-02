@@ -58,6 +58,10 @@ func put(path string, body []byte) (int, []byte) {
 	return do("PUT", path, body)
 }
 
+func patch(path string, body []byte) (int, []byte) {
+	return do("PATCH", path, body)
+}
+
 func post(path string, body []byte) (int, []byte) {
 	return do("POST", path, body)
 }

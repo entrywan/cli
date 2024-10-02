@@ -8,7 +8,8 @@ import (
 )
 
 type Member struct {
-	Ippublic string `json:"ippublic"`
+	Ippublic  string `json:"ippublic"`
+	Ipprivate string `json:"ipprivate"`
 }
 
 type Vpc struct {
@@ -36,7 +37,7 @@ func listVpcs() {
 		} else {
 			members = ""
 			for _, member := range vpc.Members {
-				members += member.Ippublic + " "
+				members += member.Ippublic + "/" + member.Ipprivate + " "
 			}
 		}
 		fmt.Fprintf(w, "%s\t%s\t%s\t%s\n",
@@ -54,6 +55,14 @@ func deleteVpc(id string) {
 
 func usageCreateVpc() {
 	fmt.Println(`usage: entrywan vpc create --name <name> --prefix <prefix>`)
+}
+
+func usageAddVpcMember() {
+	fmt.Println(`usage: entrywan vpc add --vpc <name> --ippublic <ip> [--ipprivate <ip>]`)
+}
+
+func usageRemoveVpcMember() {
+	fmt.Println(`usage: entrywan vpc remove --vpc <name> --ipprivate <ip>`)
 }
 
 type vpcParams struct {
@@ -78,6 +87,54 @@ func createVpc() {
 	post("/vpc", b)
 }
 
+type vpcAddParams struct {
+	Vpc       string `json:"vpc"`
+	IpPublic  string `json:"ip4public"`
+	IpPrivate string `json:"ip4private"`
+}
+
+func addVpcMember() {
+	opts := parseArgs()
+	params := vpcAddParams{}
+	if opts["vpc"] != "" {
+		params.Vpc = opts["vpc"]
+	}
+	if opts["ippublic"] != "" {
+		params.IpPublic = opts["ippublic"]
+	}
+	if opts["ipprivate"] != "" {
+		params.IpPrivate = opts["ipprivate"]
+	}
+	b, err := json.Marshal(params)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	put("/vpc/"+params.Vpc, b)
+}
+
+type vpcRemoveParams struct {
+	Vpc       string `json:"vpc"`
+	IpPrivate string `json:"ip4private"`
+}
+
+func removeVpcMember() {
+	opts := parseArgs()
+	params := vpcRemoveParams{}
+	if opts["vpc"] != "" {
+		params.Vpc = opts["vpc"]
+	}
+	if opts["ipprivate"] != "" {
+		params.IpPrivate = opts["ipprivate"]
+	}
+	b, err := json.Marshal(params)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	patch("/vpc/"+params.Vpc, b)
+}
+
 func vpc() {
 	if len(os.Args) < 3 {
 		usageVpc()
@@ -96,6 +153,18 @@ func vpc() {
 			usageCreateVpc()
 		} else {
 			createVpc()
+		}
+	} else if os.Args[2] == "add" {
+		if len(os.Args) < 5 {
+			usageAddVpcMember()
+		} else {
+			addVpcMember()
+		}
+	} else if os.Args[2] == "remove" {
+		if len(os.Args) < 5 {
+			usageRemoveVpcMember()
+		} else {
+			removeVpcMember()
 		}
 	} else {
 		usageVpc()
