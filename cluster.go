@@ -104,7 +104,7 @@ func cluster() {
 	}
 	if os.Args[2] == "list" || os.Args[2] == "ls" {
 		listClusters()
-	} else if os.Args[2] == "delete" {
+	} else if os.Args[2] == "delete" || os.Args[2] == "rm" {
 		if len(os.Args) != 4 {
 			usageCluster()
 		} else {

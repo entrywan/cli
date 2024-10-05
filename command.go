@@ -33,7 +33,7 @@ func usageInstance() {
 
 The subcommands are:
 
-    list (or ls)          List instances
+    list                  List instances
     create <arguments>    Create a new instance
     delete <instance_id>  Delete an instance
 
@@ -45,7 +45,7 @@ func usageCluster() {
 
 The subcommands are:
 
-    list (or ls)               List clusters
+    list                       List clusters
     create <arguments>         Create a new cluster
     kubeconfig <cluster_id>    Fetch kubeconfig for cluster
     scale <cluster_id> <size>  Scale cluster up or down
@@ -59,7 +59,7 @@ func usageApp() {
 
 The subcommands are:
 
-    list (or ls)            List apps
+    list                    List apps
     create <arguments>      Create a new app
     logs <app_id>           Fetch app logs
     image <app_id> <image>  Deploy new image
@@ -73,7 +73,7 @@ func usageSshkey() {
 
 The subcommands are:
 
-    list (or ls)        List sshkeys
+    list                List sshkeys
     create <arguments>  Create a new sshkey
     delete <sshkey_id>  Delete an sshkey
 
@@ -85,7 +85,7 @@ func usageFirewall() {
 
 The subcommands are:
 
-    list (or ls)          List firewalls
+    list                  List firewalls
     create <arguments>    Create a new firewall
     delete <firewall_id>  Delete a firewall
 
@@ -93,11 +93,11 @@ The subcommands are:
 }
 
 func usageLoadbalancer() {
-	fmt.Println(`usage: entrywan loadbalancer list (or ls)
+	fmt.Println(`usage: entrywan loadbalancer <subcommand>
 
 The subcommands are:
 
-    list (or ls)              List load balancers
+    list                      List load balancers
     create <arguments>        Create a new load balancer
     delete <loadbalancer_id>  Delete a load balancer
 
@@ -109,7 +109,7 @@ func usageVpc() {
 
 The subcommands are:
 
-    list (or ls)        List vpcs
+    list                List vpcs
     create <arguments>  Create a new vpc
     delete <vpc_id>     Delete a vpc
     add <arguments>     Add instance to vpc

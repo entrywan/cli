@@ -35,6 +35,8 @@ clusters:
 [...]
 ```
 
+"ls" is an alias for "list" and "rm" is an alias for "delete".
+
 Create an app and fetch its logs:
 
 

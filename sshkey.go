@@ -69,7 +69,7 @@ func sshkey() {
 	}
 	if os.Args[2] == "list" || os.Args[2] == "ls" {
 		listSshkeys()
-	} else if os.Args[2] == "delete" {
+	} else if os.Args[2] == "delete" || os.Args[2] == "rm" {
 		deleteSshkey(os.Args[3])
 	} else if os.Args[2] == "create" {
 		if len(os.Args) < 4 {

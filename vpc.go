@@ -142,7 +142,7 @@ func vpc() {
 	}
 	if os.Args[2] == "list" || os.Args[2] == "ls" {
 		listVpcs()
-	} else if os.Args[2] == "delete" {
+	} else if os.Args[2] == "delete" || os.Args[2] == "rm" {
 		if len(os.Args) != 4 {
 			usageVpc()
 		} else {
