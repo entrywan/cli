@@ -25,8 +25,8 @@ func listLoadbalancers() {
 	w := new(tabwriter.Writer)
 	w.Init(os.Stdout, minwidth, tabwidth, padding, '\t', 0)
 	fmt.Fprintf(w, "%s\t%s\t%s\t%s\t%s\t%s\n",
-		"NAME",
 		"ID",
+		"NAME",
 		"PROTOCOL",
 		"IP",
 		"LOCATION",
