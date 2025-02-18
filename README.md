@@ -81,8 +81,8 @@ The commands are:
    firewall      Manage firewalls
    loadbalancer  Manage load balancers
    vpc           Manage VPC networks
-   app           Manage apps
-   model         Manage models
+   app           Manage apps (beta)
+   model         Manage models (alpha)
    version       Show cli version
 
 'entrywan <subcommand>' to show usage for each subcommand.

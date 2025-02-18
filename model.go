@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"strconv"
 	"text/tabwriter"
 )
 
@@ -12,7 +11,6 @@ type Model struct {
 	Id       string `json:"id"`
 	Name     string `json:"name"`
 	Location string `json:"location"`
-	Size     int    `json:"size"`
 	State    string `json:"state"`
 	Type     string `json:"type"`
 	Token    string `json:"token"`
@@ -48,13 +46,12 @@ func deleteModel(id string) {
 }
 
 func usageCreateModel() {
-	fmt.Println(`usage: entrywan model create --name <name> --location <location> --type <type> --size <size>`)
+	fmt.Println(`usage: entrywan model create --name <name> --location <location> --type <type>`)
 }
 
 type modelParams struct {
 	Name     string `json:"name"`
 	Location string `json:"location"`
-	Size     int    `json:"size"`
 	Type     string `json:"type"`
 }
 
@@ -69,9 +66,6 @@ func createModel() {
 	}
 	if opts["type"] != "" {
 		params.Type = opts["type"]
-	}
-	if opts["size"] != "" {
-		params.Size, _ = strconv.Atoi(opts["size"])
 	}
 	b, err := json.Marshal(params)
 	if err != nil {
