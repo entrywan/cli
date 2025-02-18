@@ -82,6 +82,7 @@ The commands are:
    loadbalancer  Manage load balancers
    vpc           Manage VPC networks
    app           Manage apps
+   model         Manage models
    version       Show cli version
 
 'entrywan <subcommand>' to show usage for each subcommand.

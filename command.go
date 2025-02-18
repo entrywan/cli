@@ -23,6 +23,7 @@ The commands are:
    loadbalancer  Manage load balancers
    vpc           Manage VPC networks
    app           Manage apps
+   model         Manage models
    version       Show cli version
 
 'entrywan <subcommand>' to show usage for each subcommand.`)
@@ -52,6 +53,18 @@ The subcommands are:
     delete <cluster_id>        Delete an cluster
 
 'entrywan cluster create' for create arguments`)
+}
+
+func usageModel() {
+	fmt.Println(`usage: entrywan model <command> [<args]
+
+The subcommands are:
+
+    list                List models
+    create <arguments>  Create a new model
+    delete <model_id>   Delete a model
+
+'entrywan model create' for create arguments`)
 }
 
 func usageApp() {
@@ -126,6 +139,8 @@ func runCommand() {
 		instance()
 	case "cluster":
 		cluster()
+	case "model":
+		model()
 	case "sshkey":
 		sshkey()
 	case "firewall":
