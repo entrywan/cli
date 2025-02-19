@@ -60,9 +60,10 @@ func usageModel() {
 
 The subcommands are:
 
-    list                List models
-    create <arguments>  Create a new model
-    delete <model_id>   Delete a model
+    list                      List models
+    create <arguments>        Create a new model
+    query <model_id or name>  Query a model
+    delete <model_id>         Delete a model
 
 'entrywan model create' for create arguments`)
 }

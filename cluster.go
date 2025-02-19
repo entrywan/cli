@@ -55,6 +55,7 @@ func listClusters() {
 	}
 	w.Flush()
 }
+
 func deleteCluster(id string) {
 	delete("/cluster/" + id)
 }

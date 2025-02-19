@@ -52,6 +52,7 @@ func listApps() {
 	}
 	w.Flush()
 }
+
 func deleteApp(id string) {
 	delete("/app/" + id)
 }
