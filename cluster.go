@@ -61,7 +61,7 @@ func deleteCluster(id string) {
 }
 
 func usageCreateCluster() {
-	fmt.Println(`usage: entrywan cluster create --name <name> --location <location> --version <version> --cni <cni> --size <size>`)
+	fmt.Println(`usage: entrywan cluster create --name <name> --location <location> --version <version> --cni <flannel|calico|cilium> --size <size>`)
 }
 
 type clusterParams struct {
