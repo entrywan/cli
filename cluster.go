@@ -68,7 +68,7 @@ type clusterParams struct {
 	Name     string `json:"name"`
 	Location string `json:"location"`
 	Version  string `json:"version"`
-	Cni      string `json:"cniname"`
+	Cni      string `json:"cni"`
 	Size     int    `json:"size"`
 }
 
