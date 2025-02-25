@@ -54,7 +54,7 @@ func deleteModel(id string) {
 	delete("/model/" + id)
 }
 
-func queryModel(modelName string) {
+func chatModel(modelName string) {
 	var model Model
 	uid, err := uuid.Parse(modelName)
 	if err != nil {
@@ -170,8 +170,8 @@ func model() {
 	}
 	if os.Args[2] == "list" || os.Args[2] == "ls" {
 		listModels()
-	} else if os.Args[2] == "query" {
-		queryModel(os.Args[3])
+	} else if os.Args[2] == "chat" {
+		chatModel(os.Args[3])
 	} else if os.Args[2] == "delete" || os.Args[2] == "rm" {
 		if len(os.Args) != 4 {
 			usageModel()
