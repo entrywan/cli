@@ -71,7 +71,7 @@ func chatModel(modelName string) {
 		_, b := get("/model")
 		json.Unmarshal(b, &models)
 		for _, m := range models {
-			if m.Name == uid.String() {
+			if m.Id == uid.String() {
 				model = m
 			}
 		}
