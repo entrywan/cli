@@ -30,7 +30,7 @@ func parseConfig() {
 		os.Exit(1)
 	}
 	if config.Endpoint == "" {
-		config.Endpoint = "https://api.entrywan.com/v1beta"
+		config.Endpoint = "https://api.entrywan.com/v1"
 	}
 	if config.Token == "" {
 		fmt.Fprintln(os.Stderr,
